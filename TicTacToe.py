@@ -9,14 +9,14 @@ def win(current_game):
         else:
             return False
 
-    # Horizontal
+    # Horizontal Win
     for row in game:
         print(row)
         if all_same(row):
             print(f"Player {row[0]} is the winner horizontally (-)!")
             return True
 
-    # Diagonal
+    # Diagonal Win
     diags = []
     for col, row in enumerate(reversed(range(len(game)))):
         diags.append(game[row][col])
@@ -31,7 +31,7 @@ def win(current_game):
         print(f"Player {diags[0]} is the winner diagonally (\\)!")
         return True
 
-    # Vertical
+    # Vertical Win
     for col in range(len(game)):
         check = []
 
